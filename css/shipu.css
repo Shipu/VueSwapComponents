@@ -1,0 +1,200 @@
+/*
+Author          : Shipu Ahamed
+facebook        : http://fb.me/DeesheharaShipu
+Website         : http://shipuahamed.com
+*/
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+    height: 100%;
+    background: #F0F3F4;
+}
+
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*form styles*/
+#msform {
+    width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+/*inputs*/
+#msform input, #msform textarea, #msform select {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 14px;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 25%;
+    background: #42B983;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    font-size: x-large;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+}
+#progressbar li:before {
+    width: 30px;
+    height: 30px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 30px;
+    border: 2px solid #7d7d7d;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #cccccc;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+#progressbar li.active {
+    color: #308660;
+    font-weight: bold;
+}
+#progressbar li.active:before {
+    border-color: #42b983;
+    color: #35495E;
+}
+#progressbar li.active + li:after {
+    background-color: #308660;
+}
+
+.pvalue {
+    float: right !important;
+    right: 32px !important;
+    padding: 5px;
+    font-weight: bold;
+    position: absolute;
+    font-size: 16px;
+}
+
+.permission li {
+    background: #fff none repeat scroll 0 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+    min-height: 32px;
+    padding: 12px 38px 9px 10px;
+    background: #eee none repeat scroll 0 0;
+    text-align: left !important;
+    list-style: none;
+}
+
+.permission li::before {
+    content: "";
+    display: block;
+    height: 32px;
+    float: right;
+    top: 5px;
+    width: 32px;
+}
+
+.welcome  {
+    height: 250px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 250px;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    color: black;
+    word-spacing: 10px;
+    font-weight: bold;
+}
+
+.finished {
+    height: 250px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 250px;
+    text-transform: uppercase;
+    font-family: 'Lato';
+    color: black;
+    word-spacing: 10px;
+    font-weight: bold;
+}

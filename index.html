@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJs Swaping Commponent Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/shipu.css">
+</head>
+<body>
+    <form id="msform">
+        <!-- progressbar -->
+        <ul id="progressbar">
+            <li :class="className.templateOne">Template 1</li>
+            <li :class="className.templateTwo">Template 2</li>
+            <li :class="className.templateThree">Template 3</li>
+            <li :class="className.templateFour">Template 4</li>
+            <li :class="className.templateFive">Template 5</li>
+        </ul>
+        <component :is="msg"></component>
+    </form>
+
+    <template id="templateOne">
+        <fieldset>
+            <div class="welcome">
+                Template 1: Write your welcome message
+            </div>
+            <button @click="nextorprevious('templateTwo')" class="next action-button"> Next </button>
+        </fieldset>
+    </template>
+
+    <template id="templateTwo">
+        <fieldset>
+            <div class="welcome">
+                Template 2: Design Yourself
+            </div>
+            <button @click="nextorprevious('templateOne')" class="previous action-button"> Previous </button>
+            <button @click="nextorprevious('templateThree')" class="next action-button"> Next </button>
+        </fieldset>
+    </template>
+
+    <template id="templateThree">
+        <fieldset>
+            <div class="welcome">
+                Template 3: Reuse components facilities
+            </div>
+            <button @click="nextorprevious('templateTwo')" class="previous action-button"> Previous </button>
+            <button @click="nextorprevious('templateFour')" class="next action-button"> Next </button>
+        </fieldset>
+    </template>
+
+    <template id="templateFour">
+        <fieldset>
+            <div class="welcome">
+                Template 4: Easy to understand
+            </div>
+            <button @click="nextorprevious('templateThree')" class="previous action-button"> Previous </button>
+            <button @click="nextorprevious('templateFive')" class="next action-button"> Next </button>
+        </fieldset>
+    </template>
+
+    <template id="templateFive">
+        <fieldset>
+            <div class="welcome">
+                Template 5: VueJS Swapping Component
+            </div>
+            <button @click="nextorprevious('templateFour')" class="previous action-button"> Previous </button>
+            <button @click="nextorprevious('templateone')" class="next action-button"> Finished </button>
+        </fieldset>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/vue/1.0.26/vue.js"></script>
+    <script src="js/shipu.js"></script>
+</body>
+</html>
